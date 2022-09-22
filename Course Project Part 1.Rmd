@@ -1,0 +1,102 @@
+---
+title: investigate the exponential distribution in R and compare it with the Central
+  Limit Theorem
+author: "ismael"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+In this project you will investigate the exponential distribution in R and compare it with the Central Limit Theorem. The exponential distribution can be simulated in R with rexp(n, lambda) where lambda is the rate parameter. The mean of exponential distribution is 1/lambda and the standard deviation is also 1/lambda. Set lambda = 0.2 for all of the simulations. You will investigate the distribution of averages of 40 exponentials. Note that you will need to do a thousand simulations.
+
+```{r, overview, echo=FALSE}
+# load required libraries
+library(knitr)
+library(ggplot2)
+library(stringr)
+library(tidyverse)
+library(rmarkdown)
+```
+
+## Simulations
+
+Illustrate via simulation and associated explanatory text the properties of the distribution of the mean of 40 exponentials
+
+```{r, simulations, echo=FALSE}
+set.seed(1)
+lambda = 0.2
+exponentials = 40
+```
+
+Run Simulations with variables
+```{r, echo=FALSE}
+simMeans = NULL
+for (i in 1 : 1000) simMeans = c(simMeans, mean(rexp(exponentials, lambda)))
+```
+
+#### Calculate Sample Mean
+Calculating the mean from the simulations with give the sample mean.
+```{r, echo=FALSE}
+mean(simMeans)
+```
+
+#### Calculate Theoretical Mean
+Calculating the theoretical mean of an exponential distribution (lambda^-1).
+```{r, echo=FALSE}
+lambda^-1
+```
+
+#### Comparison of means
+Sample Mean and Theoretical Mean are almost the same
+```{r, echo=FALSE}
+abs(mean(simMeans)-lambda^-1)
+```
+
+#### Calculate Sample Variance
+Calculating the variance from the simulation means with give the sample
+variance.
+```{r, echo=FALSE}
+var(simMeans)
+```
+
+#### Calculate Theoretical Variance
+The theoretical variance of an exponential distribution is 
+(lambda * sqrt(n))^-2.
+```{r, echo=FALSE}
+(lambda * sqrt(exponentials))^-2
+```
+
+#### Comparison of Variances
+Sample Variance and Theoretical Variance are almost the same
+```{r, echo=FALSE}
+abs(var(simMeans)-(lambda * sqrt(exponentials))^-2)
+```
+
+## Distribution
+```{r, message=FALSE, warning=FALSE}
+simnum <- 1000
+sim <- matrix(rexp(simnum*exponentials, rate=lambda), simnum, exponentials)
+row_means <- rowMeans(sim)
+# plot of histogram of means
+hist(row_means, breaks=100, prob=TRUE,
+     main="Normal Distribution Comparison", xlab="Sample mean")
+# density of the means of samples
+lines(density(row_means), col="blue")
+# theoretical center of distribution
+abline(v=1/lambda, col="red")
+# theoretical density of the means of samples
+xfit <- seq(min(row_means), max(row_means), length=100)
+yfit <- dnorm(xfit, mean=1/lambda, sd=(1/lambda/sqrt(exponentials)))
+lines(xfit, yfit, pch=22, col="green", lty=2)
+# add legend
+legend('bottomright', c("simulation", "theoretical"), lty=c(1,2), col=c("blue", "green"))
+```
+
+Due to the Central Limit Theorem, the distribution of means of the sampled exponential distributions follow a normal distribution.

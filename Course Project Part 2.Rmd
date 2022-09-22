@@ -1,0 +1,62 @@
+---
+title: "analyze the ToothGrowth data"
+author: "ismael"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Overview
+we're going to analyze the ToothGrowth data in the R datasets package.
+Load the ToothGrowth data and perform some basic exploratory data analyses
+Provide a basic summary of the data.
+Use confidence intervals and/or hypothesis tests to compare tooth growth by supp and dose. (Only use the techniques from class, even if there's other approaches worth considering)
+State your conclusions and the assumptions needed for your conclusions.
+
+## Load the ToothGrowth data and perform exploratory data analyses
+```{r, echo=FALSE}
+library(datasets)
+library(ggplot2)
+data(ToothGrowth)
+str(ToothGrowth)
+head(ToothGrowth)
+summary(ToothGrowth)
+```
+
+```{r}
+TG = ToothGrowth
+levels(TG$supp) <- c("Orange Juice", "Ascorbic Acid")
+ggplot(TG, aes(x=factor(dose), y=len)) + 
+  facet_grid(.~supp) +
+  geom_boxplot(aes(fill = supp), show_guide = FALSE) +
+  labs(title="tooth length by dosage", 
+    x="Dose (mg/day)",
+    y="Tooth Length")
+```
+
+## Basic summary of the data
+looking at our plot, It seems that when Dosage of both types of supplements increase, Tooth Length increase and also that Ascorbic acid is less effective than Orange juice under 2.0 milligrams per day.
+
+## Use confidence intervals & hypothesis tests to compare tooth growth by supplement and dose
+#### tooth growth by supplement
+```{r}
+t.test(len ~ supp, ToothGrowth)
+```
+The p-value is 0.06 witch is greater than 0.05 and confidence interval includes zero
+In conclusion, supplements types have no impact on Tooth growth.
+
+#### tooth growth by dose
+```{r}
+t.test(len ~ dose, ToothGrowth[ToothGrowth$dose %in% c(0.5, 1), ])
+```
+
+```{r}
+t.test(len ~ dose, ToothGrowth[ToothGrowth$dose %in% c(1, 2), ])
+```
+
+The p-value is near zero and confidence interval is less than zero.
+In conclusion, the average of tooth length increases with dose so the null hypothesis is rejected.
+
+#### Conclusions and Assumptions
+looking at the results of our tests, increase the dose also increase the tooth growth, but supplement type has no effect on tooth growth.

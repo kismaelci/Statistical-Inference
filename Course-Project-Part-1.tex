@@ -1,0 +1,274 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={investigate the exponential distribution in R and compare it with the Central Limit Theorem},
+  pdfauthor={ismael},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{investigate the exponential distribution in R and compare it with
+the Central Limit Theorem}
+\author{ismael}
+\date{2022-09-21}
+
+\begin{document}
+\maketitle
+
+\hypertarget{overview}{%
+\subsection{Overview}\label{overview}}
+
+In this project you will investigate the exponential distribution in R
+and compare it with the Central Limit Theorem. The exponential
+distribution can be simulated in R with rexp(n, lambda) where lambda is
+the rate parameter. The mean of exponential distribution is 1/lambda and
+the standard deviation is also 1/lambda. Set lambda = 0.2 for all of the
+simulations. You will investigate the distribution of averages of 40
+exponentials. Note that you will need to do a thousand simulations.
+
+\begin{verbatim}
+## Warning: package 'knitr' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'stringr' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tidyverse' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+## v tibble  3.1.8      v purrr   0.3.4 
+## v tidyr   1.2.1      v dplyr   1.0.10
+## v readr   2.1.2      v forcats 0.5.2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tibble' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tidyr' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'readr' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'forcats' was built under R version 4.2.1
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'rmarkdown' was built under R version 4.2.1
+\end{verbatim}
+
+\hypertarget{simulations}{%
+\subsection{Simulations}\label{simulations}}
+
+Illustrate via simulation and associated explanatory text the properties
+of the distribution of the mean of 40 exponentials
+
+Run Simulations with variables
+
+\hypertarget{calculate-sample-mean}{%
+\paragraph{Calculate Sample Mean}\label{calculate-sample-mean}}
+
+Calculating the mean from the simulations with give the sample mean.
+
+\begin{verbatim}
+## [1] 4.990025
+\end{verbatim}
+
+\hypertarget{calculate-theoretical-mean}{%
+\paragraph{Calculate Theoretical
+Mean}\label{calculate-theoretical-mean}}
+
+Calculating the theoretical mean of an exponential distribution
+(lambda\^{}-1).
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\hypertarget{comparison-of-means}{%
+\paragraph{Comparison of means}\label{comparison-of-means}}
+
+Sample Mean and Theoretical Mean are almost the same
+
+\begin{verbatim}
+## [1] 0.009974799
+\end{verbatim}
+
+\hypertarget{calculate-sample-variance}{%
+\paragraph{Calculate Sample Variance}\label{calculate-sample-variance}}
+
+Calculating the variance from the simulation means with give the sample
+variance.
+
+\begin{verbatim}
+## [1] 0.6111165
+\end{verbatim}
+
+\hypertarget{calculate-theoretical-variance}{%
+\paragraph{Calculate Theoretical
+Variance}\label{calculate-theoretical-variance}}
+
+The theoretical variance of an exponential distribution is (lambda *
+sqrt(n))\^{}-2.
+
+\begin{verbatim}
+## [1] 0.625
+\end{verbatim}
+
+\hypertarget{comparison-of-variances}{%
+\paragraph{Comparison of Variances}\label{comparison-of-variances}}
+
+Sample Variance and Theoretical Variance are almost the same
+
+\begin{verbatim}
+## [1] 0.01388353
+\end{verbatim}
+
+\hypertarget{distribution}{%
+\subsection{Distribution}\label{distribution}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{simnum }\OtherTok{\textless{}{-}} \DecValTok{1000}
+\NormalTok{sim }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{rexp}\NormalTok{(simnum}\SpecialCharTok{*}\NormalTok{exponentials, }\AttributeTok{rate=}\NormalTok{lambda), simnum, exponentials)}
+\NormalTok{row\_means }\OtherTok{\textless{}{-}} \FunctionTok{rowMeans}\NormalTok{(sim)}
+\CommentTok{\# plot of histogram of means}
+\FunctionTok{hist}\NormalTok{(row\_means, }\AttributeTok{breaks=}\DecValTok{100}\NormalTok{, }\AttributeTok{prob=}\ConstantTok{TRUE}\NormalTok{,}
+     \AttributeTok{main=}\StringTok{"Normal Distribution Comparison"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Sample mean"}\NormalTok{)}
+\CommentTok{\# density of the means of samples}
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{density}\NormalTok{(row\_means), }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\CommentTok{\# theoretical center of distribution}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\DecValTok{1}\SpecialCharTok{/}\NormalTok{lambda, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\CommentTok{\# theoretical density of the means of samples}
+\NormalTok{xfit }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\FunctionTok{min}\NormalTok{(row\_means), }\FunctionTok{max}\NormalTok{(row\_means), }\AttributeTok{length=}\DecValTok{100}\NormalTok{)}
+\NormalTok{yfit }\OtherTok{\textless{}{-}} \FunctionTok{dnorm}\NormalTok{(xfit, }\AttributeTok{mean=}\DecValTok{1}\SpecialCharTok{/}\NormalTok{lambda, }\AttributeTok{sd=}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{lambda}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(exponentials)))}
+\FunctionTok{lines}\NormalTok{(xfit, yfit, }\AttributeTok{pch=}\DecValTok{22}\NormalTok{, }\AttributeTok{col=}\StringTok{"green"}\NormalTok{, }\AttributeTok{lty=}\DecValTok{2}\NormalTok{)}
+\CommentTok{\# add legend}
+\FunctionTok{legend}\NormalTok{(}\StringTok{\textquotesingle{}bottomright\textquotesingle{}}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"simulation"}\NormalTok{, }\StringTok{"theoretical"}\NormalTok{), }\AttributeTok{lty=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"green"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Course-Project-Part-1_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+Due to the Central Limit Theorem, the distribution of means of the
+sampled exponential distributions follow a normal distribution.
+
+\end{document}
